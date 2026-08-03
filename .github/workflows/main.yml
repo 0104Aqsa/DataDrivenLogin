@@ -1,0 +1,17 @@
+name: Test GitHub Action
+
+on:
+  push:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository Checked
+        run: |
+          echo "A new code push has been detected."
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Developer: ${{ github.actor }}"
+          echo "Commit: ${{ github.event.head_commit.message }}"
